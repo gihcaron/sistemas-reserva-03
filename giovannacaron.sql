@@ -88,6 +88,24 @@ JOIN
 WHERE
     r.data_saida BETWEEN '2024-10-01' AND '2024-11-04';
 
+--  consulta para mostrar todos os hóspedes, incluindo aqueles que ainda estão com reservas ativas.
+
+SELECT 
+    h.nome AS hospede, 
+    q.numero_quarto AS quarto_reservado,
+    r.data_entrada AS check_in,
+    r.data_saida AS check_out
+FROM
+    hospedes h
+JOIN
+reservas r on h.id_hospede = r.id_hospede
+JOIN 
+    quartos q ON q.id_quarto = r.id_quarto
+
+
+
+
+
 
 
 
