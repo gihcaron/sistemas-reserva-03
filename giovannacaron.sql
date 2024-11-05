@@ -45,3 +45,16 @@ VALUES
 ('Ana Caetano', 20, 'giovannacaron@gmail.com', '(11) 12345678'),
 ('Thiago Ferreira', 20, 'ferreirathiago@outlook.com', '(28) 02845678'),
 ('Bruno Mars', 28, 'marsbruno@gmail.com', '(11) 88345667');
+
+INSERT INTO quartos (numero_quarto, quarto_disponivel, valor_diaria)
+VALUES
+(307, TRUE, 500.00),
+(1001, FALSE, 600.00),
+(903, TRUE, 400.00),
+(103, TRUE, 389.00),
+(1002, FALSE, 600.00),
+(507,  FALSE, 789.00),
+(309, FALSE, 500.00),
+(104, TRUE, 389.00),
+(600, FALSE, 400.00),
+(201, TRUE, 300.00);
