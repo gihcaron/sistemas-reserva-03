@@ -20,7 +20,7 @@ CREATE TABLE quartos(
 --  tabela Reservas registra as reservas realizadas pelos hóspedes
 CREATE TABLE reservas(
     id_reserva SERIAL PRIMARY KEY,
-        id_hospede INT NOT NULL,
+    id_hospede INT NOT NULL,
     id_quarto INT NOT NULL,
     data_entrada DATE NOT NULL DEFAULT CURRENT_DATE,
     data_saida DATE NOT NULL DEFAULT CURRENT_DATE,
@@ -70,5 +70,28 @@ VALUES
 (7, 7, '2024-11-05', '2024-11-06', '9:00:00'),
 (12, 9, '2024-11-05', '2024-11-06', '20:00:00'),
 (11, 2, '2024-11-05', '2024-11-06', '20:00:00');
+
+-- consulta que lista apenas os hóspedes que já finalizaram suas estadias, mostrando o nome do hóspede, o número do quarto, 
+-- a data de início da reserva e a data de término. 
+
+SELECT
+    h.nome AS hospede,
+    q.numero_quarto AS quarto,
+    r.data_entrada,
+    r.data_saida
+FROM
+    hospedes h
+JOIN
+    reservas r ON h.id_hospede = r.id_hospede
+JOIN 
+    quartos q ON q.id_quarto = r.id_quarto
+WHERE
+    r.data_saida BETWEEN '2024-10-01' AND '2024-11-04';
+
+
+
+
+
+
 
 
